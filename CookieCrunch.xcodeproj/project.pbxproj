@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		425B747B19FE9DA700D19B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B747A19FE9DA700D19B20 /* main.m */; };
-		425B747E19FE9DA700D19B20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B747D19FE9DA700D19B20 /* AppDelegate.m */; };
 		425B748919FE9DA700D19B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425B748719FE9DA700D19B20 /* Main.storyboard */; };
 		425B748B19FE9DA700D19B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425B748A19FE9DA700D19B20 /* Images.xcassets */; };
 		425B748E19FE9DA700D19B20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425B748C19FE9DA700D19B20 /* LaunchScreen.xib */; };
@@ -31,6 +30,7 @@
 		427E249019FF7FFE00DBE61E /* Swap.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248919FF7FFE00DBE61E /* Swap.m */; };
 		427E249119FF7FFE00DBE61E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248C19FF7FFE00DBE61E /* GameScene.m */; };
 		427E249419FF804900DBE61E /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249319FF804900DBE61E /* Tile.m */; };
+		427E249719FF812700DBE61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249619FF812700DBE61E /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,6 @@
 		425B747519FE9DA700D19B20 /* CookieCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		425B747919FE9DA700D19B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425B747A19FE9DA700D19B20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		425B747C19FE9DA700D19B20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		425B747D19FE9DA700D19B20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		425B748819FE9DA700D19B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		425B748A19FE9DA700D19B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		425B748D19FE9DA700D19B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -79,6 +77,8 @@
 		427E248C19FF7FFE00DBE61E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		427E249219FF804900DBE61E /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
 		427E249319FF804900DBE61E /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
+		427E249519FF812700DBE61E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		427E249619FF812700DBE61E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,6 @@
 				427E246E19FF7B7B00DBE61E /* Sounds */,
 				426D26B619FF4FA5009A7B2A /* Levels */,
 				425B74A319FE9DD800D19B20 /* Sprites.atlas */,
-				425B747C19FE9DA700D19B20 /* AppDelegate.h */,
-				425B747D19FE9DA700D19B20 /* AppDelegate.m */,
 				425B748719FE9DA700D19B20 /* Main.storyboard */,
 				425B748A19FE9DA700D19B20 /* Images.xcassets */,
 				425B748C19FE9DA700D19B20 /* LaunchScreen.xib */,
@@ -190,6 +188,8 @@
 		427E248019FF7FFE00DBE61E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				427E249519FF812700DBE61E /* AppDelegate.h */,
+				427E249619FF812700DBE61E /* AppDelegate.m */,
 				427E248119FF7FFE00DBE61E /* GameViewController.h */,
 				427E248219FF7FFE00DBE61E /* GameViewController.m */,
 			);
@@ -334,9 +334,9 @@
 			files = (
 				427E249019FF7FFE00DBE61E /* Swap.m in Sources */,
 				427E248F19FF7FFE00DBE61E /* Level.m in Sources */,
-				425B747E19FE9DA700D19B20 /* AppDelegate.m in Sources */,
 				427E249119FF7FFE00DBE61E /* GameScene.m in Sources */,
 				427E248E19FF7FFE00DBE61E /* Cookie.m in Sources */,
+				427E249719FF812700DBE61E /* AppDelegate.m in Sources */,
 				427E248D19FF7FFE00DBE61E /* GameViewController.m in Sources */,
 				425B747B19FE9DA700D19B20 /* main.m in Sources */,
 				427E249419FF804900DBE61E /* Tile.m in Sources */,
