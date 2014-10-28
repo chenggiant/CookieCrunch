@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "Swap.h"
-#import "Cookie.h"
+#import "CCGSwap.h"
+#import "CCGCookie.h"
 
-@implementation Swap
+@implementation CCGSwap
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ swap %@ with %@", [super description], self.cookieA, self.cookieB];
 }
 
 - (BOOL)isEqual:(id)object {
-    if (![object isKindOfClass:[Swap class]]) {
+    if (![object isKindOfClass:[CCGSwap class]]) {
         return NO;
     }
     
-    Swap *other = (Swap *)object;
+    CCGSwap *other = (CCGSwap *)object;
     return (other.cookieA == self.cookieA && other.cookieB == self.cookieB) ||
     (other.cookieB == self.cookieA && other.cookieA == self.cookieB);
 }

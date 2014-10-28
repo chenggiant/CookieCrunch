@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "Level.h"
+#import "CCGLevel.h"
 
 
-@interface Level()
+@interface CCGLevel()
 @property (strong, nonatomic) NSSet *possibleSwaps;
 @end
 
 
-@implementation Level {
-    Cookie *_cookies[NumColumns][NumRows];
-    Tile *_tiles[NumColumns][NumRows];
+@implementation CCGLevel {
+    CCGCookie *_cookies[NumColumns][NumRows];
+    CCGTile *_tiles[NumColumns][NumRows];
 }
 
 
@@ -37,7 +37,7 @@
                 
                 // If the value is 1, create a tile object.
                 if ([value integerValue] == 1) {
-                    _tiles[column][tileRow] = [[Tile alloc] init];
+                    _tiles[column][tileRow] = [[CCGTile alloc] init];
                 }
             }];
         }];
@@ -45,7 +45,7 @@
     return self;
 }
 
-- (Tile *)tileAtColumn:(NSInteger)column row:(NSInteger)row {
+- (CCGTile *)tileAtColumn:(NSInteger)column row:(NSInteger)row {
     NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
     NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
     
@@ -74,7 +74,7 @@
     return dictionary;
 }
 
-- (Cookie *)cookieAtColumn:(NSInteger)column row:(NSInteger)row {
+- (CCGCookie *)cookieAtColumn:(NSInteger)column row:(NSInteger)row {
     NSAssert1(column >= 0 && column < NumColumns, @"Invalid column: %ld", (long)column);
     NSAssert1(row >= 0 && row < NumRows, @"Invalid row: %ld", (long)row);
     
@@ -99,10 +99,10 @@
     for (NSInteger row = 0; row < NumRows; row++) {
         for (NSInteger column = 0; column < NumColumns; column++) {
             
-            Cookie *cookie = _cookies[column][row];
+            CCGCookie *cookie = _cookies[column][row];
             if (cookie != nil) {
                 if (column < NumColumns - 1) {
-                    Cookie *other = _cookies[column + 1][row];
+                    CCGCookie *other = _cookies[column + 1][row];
                     if (other != nil) {
                         // swap them
                         _cookies[column][row] = other;
@@ -110,7 +110,7 @@
                         
                         // check if the cookie is part of a chain
                         if ([self hasChainAtColumn:column + 1 row:row] || [self hasChainAtColumn:column row:row]) {
-                            Swap *swap = [[Swap alloc] init];
+                            CCGSwap *swap = [[CCGSwap alloc] init];
                             swap.cookieA = cookie;
                             swap.cookieB = other;
                             [set addObject:swap];
@@ -123,7 +123,7 @@
                 }
                 
                 if (row < NumRows - 1) {
-                    Cookie *other = _cookies[column][row + 1];
+                    CCGCookie *other = _cookies[column][row + 1];
                     if (other != nil) {
                         // Swap them
                         _cookies[column][row] = other;
@@ -132,7 +132,7 @@
                         if ([self hasChainAtColumn:column row:row + 1] ||
                             [self hasChainAtColumn:column row:row]) {
                             
-                            Swap *swap = [[Swap alloc] init];
+                            CCGSwap *swap = [[CCGSwap alloc] init];
                             swap.cookieA = cookie;
                             swap.cookieB = other;
                             [set addObject:swap];
@@ -150,7 +150,7 @@
 }
 
 
-- (BOOL)isPossibleSwap:(Swap *)swap {
+- (BOOL)isPossibleSwap:(CCGSwap *)swap {
     return [self.possibleSwaps containsObject:swap];
 }
 
@@ -195,7 +195,7 @@
                         _cookies[column][row - 2].cookieType == cookieType));
                 
                 // 3
-                Cookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
+                CCGCookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
             
                 // 4
                 [set addObject:cookie];
@@ -205,8 +205,8 @@
     return set;
 }
 
-- (Cookie *)createCookieAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)cookieType {
-    Cookie *cookie = [[Cookie alloc] init];
+- (CCGCookie *)createCookieAtColumn:(NSInteger)column row:(NSInteger)row withType:(NSUInteger)cookieType {
+    CCGCookie *cookie = [[CCGCookie alloc] init];
     cookie.cookieType = cookieType;
     cookie.column = column;
     cookie.row = row;
@@ -214,7 +214,7 @@
     return cookie;
 }
 
-- (void)performSwap:(Swap *)swap {
+- (void)performSwap:(CCGSwap *)swap {
     NSInteger columnA = swap.cookieA.column;
     NSInteger rowA = swap.cookieA.row;
     NSInteger columnB = swap.cookieB.column;

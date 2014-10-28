@@ -1,13 +1,15 @@
 //
-//  Tile.m
+//  Tile.h
 //  CookieCrunch
 //
 //  Created by Chi on 28/10/14.
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "Tile.h"
+#import <Foundation/Foundation.h>
 
-@implementation Tile
+@interface CCGTile : NSObject
+
+
 
 @end

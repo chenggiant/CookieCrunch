@@ -10,7 +10,7 @@
 
 static const NSUInteger NumCookieTypes = 6;
 
-@interface Cookie : NSObject
+@interface CCGCookie : NSObject
 
 @property (assign, atomic) NSInteger row;
 @property (assign, atomic) NSInteger column;

@@ -6,20 +6,20 @@
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "GameViewController.h"
-#import "GameScene.h"
-#import "Level.h"
+#import "CCGViewController.h"
+#import "CCGScene.h"
+#import "CCGLevel.h"
 
 
-@interface GameViewController ()
+@interface CCGViewController ()
 
-@property (strong, nonatomic) Level *level;
-@property (strong, nonatomic) GameScene *scene;
+@property (strong, nonatomic) CCGLevel *level;
+@property (strong, nonatomic) CCGScene *scene;
 
 @end
 
 
-@implementation GameViewController
+@implementation CCGViewController
 
 
 - (void)viewDidLoad {
@@ -30,17 +30,17 @@
     skView.multipleTouchEnabled = NO;
     
     // Create and configure the scene.
-    self.scene = [GameScene sceneWithSize:skView.bounds.size];
+    self.scene = [CCGScene sceneWithSize:skView.bounds.size];
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Load the level.
-    self.level = [[Level alloc] initWithFile:@"Level_1"];
+    self.level = [[CCGLevel alloc] initWithFile:@"Level_1"];
     self.scene.level = self.level;
     
     // add the tile layer
     [self.scene addTiles];
     
-    id block = ^(Swap *swap) {
+    id block = ^(CCGSwap *swap) {
         self.view.userInteractionEnabled = NO;
         
         if ([self.level isPossibleSwap:swap]) {

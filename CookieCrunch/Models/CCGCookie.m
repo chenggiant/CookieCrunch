@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "Cookie.h"
+#import "CCGCookie.h"
 
-@implementation Cookie
+@implementation CCGCookie
 
 - (NSString *)spriteName {
     static NSString * const spriteName[] = {

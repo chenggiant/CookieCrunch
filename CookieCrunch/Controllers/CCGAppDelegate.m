@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CCGAppDelegate.h"
 
-@interface AppDelegate ()
+@interface CCGAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation CCGAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

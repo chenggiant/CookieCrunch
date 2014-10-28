@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Cookie;
+@class CCGCookie;
 
-@interface Swap : NSObject
+@interface CCGSwap : NSObject
 
-@property (strong, nonatomic) Cookie *cookieA;
-@property (strong, nonatomic) Cookie *cookieB;
+@property (strong, nonatomic) CCGCookie *cookieA;
+@property (strong, nonatomic) CCGCookie *cookieB;
 
 @end

@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 CHI. All rights reserved.
 //
 
-#import "GameScene.h"
-#import "Level.h"
-#import "Cookie.h"
-#import "Swap.h"
+#import "CCGScene.h"
+#import "CCGLevel.h"
+#import "CCGCookie.h"
+#import "CCGSwap.h"
 
 static const CGFloat TileWidth = 32.0;
 static const CGFloat TileHeight = 36.0;
 
-@interface GameScene()
+@interface CCGScene()
 
 @property (strong, nonatomic) SKNode *gameLayer;
 @property (strong, nonatomic) SKNode *cookiesLayer;
@@ -35,7 +35,7 @@ static const CGFloat TileHeight = 36.0;
 @end
 
 
-@implementation GameScene
+@implementation CCGScene
 
 - (id)initWithSize:(CGSize)size {
     if ((self = [super initWithSize:size])) {
@@ -108,7 +108,7 @@ static const CGFloat TileHeight = 36.0;
     
     NSInteger column, row;
     if ([self convertPoint:location toColumn:&column row:&row]) {
-        Cookie *cookie = [self.level cookieAtColumn:column row:row];
+        CCGCookie *cookie = [self.level cookieAtColumn:column row:row];
         if (cookie != nil) {
             [self showSelectionIndicatorForCookie:cookie];
             self.swipeFromColumn = column;
@@ -163,14 +163,14 @@ static const CGFloat TileHeight = 36.0;
     if (toRow < 0 || toRow >= NumRows) return;
     
     // 3
-    Cookie *toCookie = [self.level cookieAtColumn:toColumn row:toRow];
+    CCGCookie *toCookie = [self.level cookieAtColumn:toColumn row:toRow];
     if (toCookie == nil) return;
     
     // 4
-    Cookie *fromCookie = [self.level cookieAtColumn:self.swipeFromColumn row:self.swipeFromRow];
+    CCGCookie *fromCookie = [self.level cookieAtColumn:self.swipeFromColumn row:self.swipeFromRow];
     
     if (self.swipeHandler != nil) {
-        Swap *swap = [[Swap alloc] init];
+        CCGSwap *swap = [[CCGSwap alloc] init];
         swap.cookieA = fromCookie;
         swap.cookieB = toCookie;
         
@@ -178,7 +178,7 @@ static const CGFloat TileHeight = 36.0;
     }
 }
 
-- (void)animateSwap:(Swap *)swap completion:(dispatch_block_t)completion {
+- (void)animateSwap:(CCGSwap *)swap completion:(dispatch_block_t)completion {
     // Put the cookie you started with on top.
     swap.cookieA.sprite.zPosition = 100;
     swap.cookieB.sprite.zPosition = 90;
@@ -196,7 +196,7 @@ static const CGFloat TileHeight = 36.0;
 
 }
 
-- (void)animateInvalidSwap:(Swap *)swap completion:(dispatch_block_t)completion {
+- (void)animateInvalidSwap:(CCGSwap *)swap completion:(dispatch_block_t)completion {
     swap.cookieA.sprite.zPosition = 100;
     swap.cookieB.sprite.zPosition = 90;
     
@@ -214,7 +214,7 @@ static const CGFloat TileHeight = 36.0;
 
 }
 
-- (void)showSelectionIndicatorForCookie:(Cookie *)cookie {
+- (void)showSelectionIndicatorForCookie:(CCGCookie *)cookie {
     // If the selection indicator is still visible, then first remove it.
     if (self.selectionSprite.parent != nil) {
         [self.selectionSprite removeFromParent];
@@ -256,7 +256,7 @@ static const CGFloat TileHeight = 36.0;
 
 
 - (void)addSpritesForCookies:(NSSet *)cookies {
-    for (Cookie *cookie in cookies) {
+    for (CCGCookie *cookie in cookies) {
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:[cookie spriteName]];
         sprite.position = [self pointForColumn:cookie.column row:cookie.row];
         [self.cookiesLayer addChild:sprite];

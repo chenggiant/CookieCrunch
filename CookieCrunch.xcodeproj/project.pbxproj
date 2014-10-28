@@ -24,13 +24,13 @@
 		427E247819FF7B7B00DBE61E /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E247219FF7B7B00DBE61E /* Ka-Ching.wav */; };
 		427E247919FF7B7B00DBE61E /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 427E247319FF7B7B00DBE61E /* Mining by Moonlight.mp3 */; };
 		427E247A19FF7B7B00DBE61E /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E247419FF7B7B00DBE61E /* Scrape.wav */; };
-		427E248D19FF7FFE00DBE61E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248219FF7FFE00DBE61E /* GameViewController.m */; };
-		427E248E19FF7FFE00DBE61E /* Cookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248519FF7FFE00DBE61E /* Cookie.m */; };
-		427E248F19FF7FFE00DBE61E /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248719FF7FFE00DBE61E /* Level.m */; };
-		427E249019FF7FFE00DBE61E /* Swap.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248919FF7FFE00DBE61E /* Swap.m */; };
-		427E249119FF7FFE00DBE61E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248C19FF7FFE00DBE61E /* GameScene.m */; };
-		427E249419FF804900DBE61E /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249319FF804900DBE61E /* Tile.m */; };
-		427E249719FF812700DBE61E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249619FF812700DBE61E /* AppDelegate.m */; };
+		427E248D19FF7FFE00DBE61E /* CCGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248219FF7FFE00DBE61E /* CCGViewController.m */; };
+		427E248E19FF7FFE00DBE61E /* CCGCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248519FF7FFE00DBE61E /* CCGCookie.m */; };
+		427E248F19FF7FFE00DBE61E /* CCGLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248719FF7FFE00DBE61E /* CCGLevel.m */; };
+		427E249019FF7FFE00DBE61E /* CCGSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248919FF7FFE00DBE61E /* CCGSwap.m */; };
+		427E249119FF7FFE00DBE61E /* CCGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248C19FF7FFE00DBE61E /* CCGScene.m */; };
+		427E249419FF804900DBE61E /* CCGTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249319FF804900DBE61E /* CCGTile.m */; };
+		427E249719FF812700DBE61E /* CCGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249619FF812700DBE61E /* CCGAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,20 +65,20 @@
 		427E247219FF7B7B00DBE61E /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
 		427E247319FF7B7B00DBE61E /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
 		427E247419FF7B7B00DBE61E /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
-		427E248119FF7FFE00DBE61E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		427E248219FF7FFE00DBE61E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		427E248419FF7FFE00DBE61E /* Cookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cookie.h; sourceTree = "<group>"; };
-		427E248519FF7FFE00DBE61E /* Cookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cookie.m; sourceTree = "<group>"; };
-		427E248619FF7FFE00DBE61E /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
-		427E248719FF7FFE00DBE61E /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
-		427E248819FF7FFE00DBE61E /* Swap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swap.h; sourceTree = "<group>"; };
-		427E248919FF7FFE00DBE61E /* Swap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swap.m; sourceTree = "<group>"; };
-		427E248B19FF7FFE00DBE61E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		427E248C19FF7FFE00DBE61E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		427E249219FF804900DBE61E /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
-		427E249319FF804900DBE61E /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
-		427E249519FF812700DBE61E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		427E249619FF812700DBE61E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		427E248119FF7FFE00DBE61E /* CCGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGViewController.h; sourceTree = "<group>"; };
+		427E248219FF7FFE00DBE61E /* CCGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGViewController.m; sourceTree = "<group>"; };
+		427E248419FF7FFE00DBE61E /* CCGCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGCookie.h; sourceTree = "<group>"; };
+		427E248519FF7FFE00DBE61E /* CCGCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGCookie.m; sourceTree = "<group>"; };
+		427E248619FF7FFE00DBE61E /* CCGLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGLevel.h; sourceTree = "<group>"; };
+		427E248719FF7FFE00DBE61E /* CCGLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGLevel.m; sourceTree = "<group>"; };
+		427E248819FF7FFE00DBE61E /* CCGSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGSwap.h; sourceTree = "<group>"; };
+		427E248919FF7FFE00DBE61E /* CCGSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGSwap.m; sourceTree = "<group>"; };
+		427E248B19FF7FFE00DBE61E /* CCGScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGScene.h; sourceTree = "<group>"; };
+		427E248C19FF7FFE00DBE61E /* CCGScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGScene.m; sourceTree = "<group>"; };
+		427E249219FF804900DBE61E /* CCGTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGTile.h; sourceTree = "<group>"; };
+		427E249319FF804900DBE61E /* CCGTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGTile.m; sourceTree = "<group>"; };
+		427E249519FF812700DBE61E /* CCGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGAppDelegate.h; sourceTree = "<group>"; };
+		427E249619FF812700DBE61E /* CCGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,10 +188,10 @@
 		427E248019FF7FFE00DBE61E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				427E249519FF812700DBE61E /* AppDelegate.h */,
-				427E249619FF812700DBE61E /* AppDelegate.m */,
-				427E248119FF7FFE00DBE61E /* GameViewController.h */,
-				427E248219FF7FFE00DBE61E /* GameViewController.m */,
+				427E249519FF812700DBE61E /* CCGAppDelegate.h */,
+				427E249619FF812700DBE61E /* CCGAppDelegate.m */,
+				427E248119FF7FFE00DBE61E /* CCGViewController.h */,
+				427E248219FF7FFE00DBE61E /* CCGViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,14 +199,14 @@
 		427E248319FF7FFE00DBE61E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				427E249219FF804900DBE61E /* Tile.h */,
-				427E249319FF804900DBE61E /* Tile.m */,
-				427E248419FF7FFE00DBE61E /* Cookie.h */,
-				427E248519FF7FFE00DBE61E /* Cookie.m */,
-				427E248619FF7FFE00DBE61E /* Level.h */,
-				427E248719FF7FFE00DBE61E /* Level.m */,
-				427E248819FF7FFE00DBE61E /* Swap.h */,
-				427E248919FF7FFE00DBE61E /* Swap.m */,
+				427E249219FF804900DBE61E /* CCGTile.h */,
+				427E249319FF804900DBE61E /* CCGTile.m */,
+				427E248419FF7FFE00DBE61E /* CCGCookie.h */,
+				427E248519FF7FFE00DBE61E /* CCGCookie.m */,
+				427E248619FF7FFE00DBE61E /* CCGLevel.h */,
+				427E248719FF7FFE00DBE61E /* CCGLevel.m */,
+				427E248819FF7FFE00DBE61E /* CCGSwap.h */,
+				427E248919FF7FFE00DBE61E /* CCGSwap.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,8 +214,8 @@
 		427E248A19FF7FFE00DBE61E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				427E248B19FF7FFE00DBE61E /* GameScene.h */,
-				427E248C19FF7FFE00DBE61E /* GameScene.m */,
+				427E248B19FF7FFE00DBE61E /* CCGScene.h */,
+				427E248C19FF7FFE00DBE61E /* CCGScene.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,14 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				427E249019FF7FFE00DBE61E /* Swap.m in Sources */,
-				427E248F19FF7FFE00DBE61E /* Level.m in Sources */,
-				427E249119FF7FFE00DBE61E /* GameScene.m in Sources */,
-				427E248E19FF7FFE00DBE61E /* Cookie.m in Sources */,
-				427E249719FF812700DBE61E /* AppDelegate.m in Sources */,
-				427E248D19FF7FFE00DBE61E /* GameViewController.m in Sources */,
+				427E249019FF7FFE00DBE61E /* CCGSwap.m in Sources */,
+				427E248F19FF7FFE00DBE61E /* CCGLevel.m in Sources */,
+				427E249119FF7FFE00DBE61E /* CCGScene.m in Sources */,
+				427E248E19FF7FFE00DBE61E /* CCGCookie.m in Sources */,
+				427E249719FF812700DBE61E /* CCGAppDelegate.m in Sources */,
+				427E248D19FF7FFE00DBE61E /* CCGViewController.m in Sources */,
 				425B747B19FE9DA700D19B20 /* main.m in Sources */,
-				427E249419FF804900DBE61E /* Tile.m in Sources */,
+				427E249419FF804900DBE61E /* CCGTile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
