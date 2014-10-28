@@ -24,6 +24,7 @@
 		426D26BF19FF4FA5009A7B2A /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 426D26BA19FF4FA5009A7B2A /* Level_3.json */; };
 		426D26C019FF4FA5009A7B2A /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 426D26BB19FF4FA5009A7B2A /* Level_4.json */; };
 		426D26C319FF4FD3009A7B2A /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D26C219FF4FD3009A7B2A /* Tile.m */; };
+		426D26C619FF6EB4009A7B2A /* Swap.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D26C519FF6EB4009A7B2A /* Swap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		426D26BB19FF4FA5009A7B2A /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
 		426D26C119FF4FD3009A7B2A /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tile.h; path = ../Tile.h; sourceTree = "<group>"; };
 		426D26C219FF4FD3009A7B2A /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tile.m; path = ../Tile.m; sourceTree = "<group>"; };
+		426D26C419FF6EB4009A7B2A /* Swap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swap.h; sourceTree = "<group>"; };
+		426D26C519FF6EB4009A7B2A /* Swap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				425B747D19FE9DA700D19B20 /* AppDelegate.m */,
 				425B747F19FE9DA700D19B20 /* GameScene.h */,
 				425B748019FE9DA700D19B20 /* GameScene.m */,
+				426D26C419FF6EB4009A7B2A /* Swap.h */,
+				426D26C519FF6EB4009A7B2A /* Swap.m */,
 				425B748419FE9DA700D19B20 /* GameViewController.h */,
 				425B748519FE9DA700D19B20 /* GameViewController.m */,
 				420BC58919FEA50900AAF987 /* Cookie.h */,
@@ -275,6 +280,7 @@
 				425B748619FE9DA700D19B20 /* GameViewController.m in Sources */,
 				425B747E19FE9DA700D19B20 /* AppDelegate.m in Sources */,
 				425B748119FE9DA700D19B20 /* GameScene.m in Sources */,
+				426D26C619FF6EB4009A7B2A /* Swap.m in Sources */,
 				425B747B19FE9DA700D19B20 /* main.m in Sources */,
 				426D26C319FF4FD3009A7B2A /* Tile.m in Sources */,
 				420BC58B19FEA50900AAF987 /* Cookie.m in Sources */,

@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "Level.h"
 #import "Cookie.h"
+#import "Swap.h"
 
 static const CGFloat TileWidth = 32.0;
 static const CGFloat TileHeight = 36.0;
@@ -139,11 +140,35 @@ static const CGFloat TileHeight = 36.0;
     // 4
     Cookie *fromCookie = [self.level cookieAtColumn:self.swipeFromColumn row:self.swipeFromRow];
     
-    NSLog(@"*** swapping %@ with %@", fromCookie, toCookie);
+    if (self.swipeHandler != nil) {
+        Swap *swap = [[Swap alloc] init];
+        swap.cookieA = fromCookie;
+        swap.cookieB = toCookie;
+        
+        self.swipeHandler(swap);
+    }
+}
+
+- (void)animateSwap:(Swap *)swap completion:(dispatch_block_t)completion {
+    // Put the cookie you started with on top.
+    swap.cookieA.sprite.zPosition = 100;
+    swap.cookieB.sprite.zPosition = 90;
+    
+    const NSTimeInterval Duration = 0.3;
+    
+    SKAction *moveA = [SKAction moveTo:swap.cookieB.sprite.position duration:Duration];
+    moveA.timingMode = SKActionTimingEaseOut;
+    [swap.cookieA.sprite runAction:[SKAction sequence:@[moveA, [SKAction runBlock:completion]]]];
+    
+    SKAction *moveB = [SKAction moveTo:swap.cookieA.sprite.position duration:Duration];
+    moveB.timingMode = SKActionTimingEaseOut;
+    [swap.cookieB.sprite runAction:moveB];
 }
 
 
-//For completeness’s sake, you should also implement touchesEnded, which is called when the user lifts her finger from the screen, and touchesCancelled, which happens when iOS decides that it must interrupt the touch (for example, because of an incoming phone call).
+// For completeness’s sake, you should also implement touchesEnded, which is called
+// when the user lifts her finger from the screen, and touchesCancelled, which happens when iOS
+// decides that it must interrupt the touch (for example, because of an incoming phone call).
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     self.swipeFromColumn = self.swipeFromRow = NSNotFound;
