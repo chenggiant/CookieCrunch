@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		420BC58B19FEA50900AAF987 /* Cookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 420BC58A19FEA50900AAF987 /* Cookie.m */; };
-		420BC58E19FEA6BF00AAF987 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 420BC58D19FEA6BF00AAF987 /* Level.m */; };
 		425B747B19FE9DA700D19B20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B747A19FE9DA700D19B20 /* main.m */; };
 		425B747E19FE9DA700D19B20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B747D19FE9DA700D19B20 /* AppDelegate.m */; };
-		425B748119FE9DA700D19B20 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B748019FE9DA700D19B20 /* GameScene.m */; };
-		425B748619FE9DA700D19B20 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425B748519FE9DA700D19B20 /* GameViewController.m */; };
 		425B748919FE9DA700D19B20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 425B748719FE9DA700D19B20 /* Main.storyboard */; };
 		425B748B19FE9DA700D19B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425B748A19FE9DA700D19B20 /* Images.xcassets */; };
 		425B748E19FE9DA700D19B20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 425B748C19FE9DA700D19B20 /* LaunchScreen.xib */; };
@@ -23,14 +19,18 @@
 		426D26BE19FF4FA5009A7B2A /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 426D26B919FF4FA5009A7B2A /* Level_2.json */; };
 		426D26BF19FF4FA5009A7B2A /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 426D26BA19FF4FA5009A7B2A /* Level_3.json */; };
 		426D26C019FF4FA5009A7B2A /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 426D26BB19FF4FA5009A7B2A /* Level_4.json */; };
-		426D26C319FF4FD3009A7B2A /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D26C219FF4FD3009A7B2A /* Tile.m */; };
-		426D26C619FF6EB4009A7B2A /* Swap.m in Sources */ = {isa = PBXBuildFile; fileRef = 426D26C519FF6EB4009A7B2A /* Swap.m */; };
 		427E247519FF7B7B00DBE61E /* Chomp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E246F19FF7B7B00DBE61E /* Chomp.wav */; };
 		427E247619FF7B7B00DBE61E /* Drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E247019FF7B7B00DBE61E /* Drip.wav */; };
 		427E247719FF7B7B00DBE61E /* Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E247119FF7B7B00DBE61E /* Error.wav */; };
 		427E247819FF7B7B00DBE61E /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E247219FF7B7B00DBE61E /* Ka-Ching.wav */; };
 		427E247919FF7B7B00DBE61E /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 427E247319FF7B7B00DBE61E /* Mining by Moonlight.mp3 */; };
 		427E247A19FF7B7B00DBE61E /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = 427E247419FF7B7B00DBE61E /* Scrape.wav */; };
+		427E248D19FF7FFE00DBE61E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248219FF7FFE00DBE61E /* GameViewController.m */; };
+		427E248E19FF7FFE00DBE61E /* Cookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248519FF7FFE00DBE61E /* Cookie.m */; };
+		427E248F19FF7FFE00DBE61E /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248719FF7FFE00DBE61E /* Level.m */; };
+		427E249019FF7FFE00DBE61E /* Swap.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248919FF7FFE00DBE61E /* Swap.m */; };
+		427E249119FF7FFE00DBE61E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248C19FF7FFE00DBE61E /* GameScene.m */; };
+		427E249419FF804900DBE61E /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249319FF804900DBE61E /* Tile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,19 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		420BC58919FEA50900AAF987 /* Cookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cookie.h; sourceTree = "<group>"; };
-		420BC58A19FEA50900AAF987 /* Cookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cookie.m; sourceTree = "<group>"; };
-		420BC58C19FEA6BF00AAF987 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
-		420BC58D19FEA6BF00AAF987 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		425B747519FE9DA700D19B20 /* CookieCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		425B747919FE9DA700D19B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		425B747A19FE9DA700D19B20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		425B747C19FE9DA700D19B20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		425B747D19FE9DA700D19B20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		425B747F19FE9DA700D19B20 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		425B748019FE9DA700D19B20 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		425B748419FE9DA700D19B20 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		425B748519FE9DA700D19B20 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		425B748819FE9DA700D19B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		425B748A19FE9DA700D19B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		425B748D19FE9DA700D19B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -69,16 +61,24 @@
 		426D26B919FF4FA5009A7B2A /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
 		426D26BA19FF4FA5009A7B2A /* Level_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_3.json; sourceTree = "<group>"; };
 		426D26BB19FF4FA5009A7B2A /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
-		426D26C119FF4FD3009A7B2A /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tile.h; path = ../Tile.h; sourceTree = "<group>"; };
-		426D26C219FF4FD3009A7B2A /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tile.m; path = ../Tile.m; sourceTree = "<group>"; };
-		426D26C419FF6EB4009A7B2A /* Swap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swap.h; sourceTree = "<group>"; };
-		426D26C519FF6EB4009A7B2A /* Swap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swap.m; sourceTree = "<group>"; };
 		427E246F19FF7B7B00DBE61E /* Chomp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chomp.wav; sourceTree = "<group>"; };
 		427E247019FF7B7B00DBE61E /* Drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drip.wav; sourceTree = "<group>"; };
 		427E247119FF7B7B00DBE61E /* Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Error.wav; sourceTree = "<group>"; };
 		427E247219FF7B7B00DBE61E /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
 		427E247319FF7B7B00DBE61E /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
 		427E247419FF7B7B00DBE61E /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
+		427E248119FF7FFE00DBE61E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		427E248219FF7FFE00DBE61E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		427E248419FF7FFE00DBE61E /* Cookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cookie.h; sourceTree = "<group>"; };
+		427E248519FF7FFE00DBE61E /* Cookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cookie.m; sourceTree = "<group>"; };
+		427E248619FF7FFE00DBE61E /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		427E248719FF7FFE00DBE61E /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		427E248819FF7FFE00DBE61E /* Swap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swap.h; sourceTree = "<group>"; };
+		427E248919FF7FFE00DBE61E /* Swap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swap.m; sourceTree = "<group>"; };
+		427E248B19FF7FFE00DBE61E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		427E248C19FF7FFE00DBE61E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		427E249219FF804900DBE61E /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		427E249319FF804900DBE61E /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,23 +120,14 @@
 		425B747719FE9DA700D19B20 /* CookieCrunch */ = {
 			isa = PBXGroup;
 			children = (
+				427E248019FF7FFE00DBE61E /* Controllers */,
+				427E248319FF7FFE00DBE61E /* Models */,
+				427E248A19FF7FFE00DBE61E /* Views */,
 				427E246E19FF7B7B00DBE61E /* Sounds */,
 				426D26B619FF4FA5009A7B2A /* Levels */,
 				425B74A319FE9DD800D19B20 /* Sprites.atlas */,
 				425B747C19FE9DA700D19B20 /* AppDelegate.h */,
 				425B747D19FE9DA700D19B20 /* AppDelegate.m */,
-				425B747F19FE9DA700D19B20 /* GameScene.h */,
-				425B748019FE9DA700D19B20 /* GameScene.m */,
-				426D26C419FF6EB4009A7B2A /* Swap.h */,
-				426D26C519FF6EB4009A7B2A /* Swap.m */,
-				425B748419FE9DA700D19B20 /* GameViewController.h */,
-				425B748519FE9DA700D19B20 /* GameViewController.m */,
-				420BC58919FEA50900AAF987 /* Cookie.h */,
-				420BC58A19FEA50900AAF987 /* Cookie.m */,
-				420BC58C19FEA6BF00AAF987 /* Level.h */,
-				420BC58D19FEA6BF00AAF987 /* Level.m */,
-				426D26C119FF4FD3009A7B2A /* Tile.h */,
-				426D26C219FF4FD3009A7B2A /* Tile.m */,
 				425B748719FE9DA700D19B20 /* Main.storyboard */,
 				425B748A19FE9DA700D19B20 /* Images.xcassets */,
 				425B748C19FE9DA700D19B20 /* LaunchScreen.xib */,
@@ -194,6 +185,39 @@
 				427E247419FF7B7B00DBE61E /* Scrape.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		427E248019FF7FFE00DBE61E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				427E248119FF7FFE00DBE61E /* GameViewController.h */,
+				427E248219FF7FFE00DBE61E /* GameViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		427E248319FF7FFE00DBE61E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				427E249219FF804900DBE61E /* Tile.h */,
+				427E249319FF804900DBE61E /* Tile.m */,
+				427E248419FF7FFE00DBE61E /* Cookie.h */,
+				427E248519FF7FFE00DBE61E /* Cookie.m */,
+				427E248619FF7FFE00DBE61E /* Level.h */,
+				427E248719FF7FFE00DBE61E /* Level.m */,
+				427E248819FF7FFE00DBE61E /* Swap.h */,
+				427E248919FF7FFE00DBE61E /* Swap.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		427E248A19FF7FFE00DBE61E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				427E248B19FF7FFE00DBE61E /* GameScene.h */,
+				427E248C19FF7FFE00DBE61E /* GameScene.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,14 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420BC58E19FEA6BF00AAF987 /* Level.m in Sources */,
-				425B748619FE9DA700D19B20 /* GameViewController.m in Sources */,
+				427E249019FF7FFE00DBE61E /* Swap.m in Sources */,
+				427E248F19FF7FFE00DBE61E /* Level.m in Sources */,
 				425B747E19FE9DA700D19B20 /* AppDelegate.m in Sources */,
-				425B748119FE9DA700D19B20 /* GameScene.m in Sources */,
-				426D26C619FF6EB4009A7B2A /* Swap.m in Sources */,
+				427E249119FF7FFE00DBE61E /* GameScene.m in Sources */,
+				427E248E19FF7FFE00DBE61E /* Cookie.m in Sources */,
+				427E248D19FF7FFE00DBE61E /* GameViewController.m in Sources */,
 				425B747B19FE9DA700D19B20 /* main.m in Sources */,
-				426D26C319FF4FD3009A7B2A /* Tile.m in Sources */,
-				420BC58B19FEA50900AAF987 /* Cookie.m in Sources */,
+				427E249419FF804900DBE61E /* Tile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
