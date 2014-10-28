@@ -34,8 +34,11 @@
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Load the level.
-    self.level = [[Level alloc] init];
+    self.level = [[Level alloc] initWithFile:@"Level_1"];
     self.scene.level = self.level;
+    
+    // add the tile layer
+    [self.scene addTiles];
     
     // Present the scene.
     [skView presentScene:self.scene];

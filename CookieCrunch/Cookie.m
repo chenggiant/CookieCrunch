@@ -35,7 +35,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"type:%ld square:(%ld, %ld)", (long)self.cookieType, (long)self.column, self.row];
+    return [NSString stringWithFormat:@"type:%ld square:(%ld, %ld)", (long)self.cookieType, (long)self.column, (long)self.row];
 }
 
 @end
