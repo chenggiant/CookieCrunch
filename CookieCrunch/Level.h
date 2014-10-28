@@ -22,5 +22,7 @@ static const NSInteger NumRows = 9;
 - (Tile *)tileAtColumn:(NSInteger)column row:(NSInteger)row;
 
 - (void)performSwap:(Swap *)swap;
+- (BOOL)isPossibleSwap:(Swap *)swap;
+
 
 @end

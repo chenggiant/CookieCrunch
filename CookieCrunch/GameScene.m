@@ -23,6 +23,15 @@ static const CGFloat TileHeight = 36.0;
 @property (assign, nonatomic) NSInteger swipeFromColumn;
 @property (assign, nonatomic) NSInteger swipeFromRow;
 
+@property (strong, nonatomic) SKSpriteNode *selectionSprite;
+
+
+@property (strong, nonatomic) SKAction *swapSound;
+@property (strong, nonatomic) SKAction *invalidSwapSound;
+@property (strong, nonatomic) SKAction *matchSound;
+@property (strong, nonatomic) SKAction *fallingCookieSound;
+@property (strong, nonatomic) SKAction *addCookieSound;
+
 @end
 
 
@@ -49,25 +58,26 @@ static const CGFloat TileHeight = 36.0;
         self.cookiesLayer.position = layerPosition;
         [self.gameLayer addChild:self.cookiesLayer];
     }
+    
+    [self preloadResources];
+
     self.swipeFromColumn = self.swipeFromRow = NSNotFound;
+
+    self.selectionSprite = [SKSpriteNode node];
 
     return self;
     
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self.cookiesLayer];
-    
-    NSInteger column, row;
-    if ([self convertPoint:location toColumn:&column row:&row]) {
-        Cookie *cookie = [self.level cookieAtColumn:column row:row];
-        if (cookie != nil) {
-            self.swipeFromColumn = column;
-            self.swipeFromRow = row;
-        }
-    }
+- (void)preloadResources {
+    self.swapSound = [SKAction playSoundFileNamed:@"Chomp.wav" waitForCompletion:NO];
+    self.invalidSwapSound = [SKAction playSoundFileNamed:@"Error.wav" waitForCompletion:NO];
+    self.matchSound = [SKAction playSoundFileNamed:@"Ka-Ching.wav" waitForCompletion:NO];
+    self.fallingCookieSound = [SKAction playSoundFileNamed:@"Scrape.wav" waitForCompletion:NO];
+    self.addCookieSound = [SKAction playSoundFileNamed:@"Drip.wav" waitForCompletion:NO];
 }
+
+
 
 - (BOOL)convertPoint:(CGPoint)point toColumn:(NSInteger *)column row:(NSInteger *)row {
     NSParameterAssert(column);
@@ -90,6 +100,23 @@ static const CGFloat TileHeight = 36.0;
     }
 
 }
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self.cookiesLayer];
+    
+    NSInteger column, row;
+    if ([self convertPoint:location toColumn:&column row:&row]) {
+        Cookie *cookie = [self.level cookieAtColumn:column row:row];
+        if (cookie != nil) {
+            [self showSelectionIndicatorForCookie:cookie];
+            self.swipeFromColumn = column;
+            self.swipeFromRow = row;
+        }
+    }
+}
+
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     // 1
@@ -117,6 +144,8 @@ static const CGFloat TileHeight = 36.0;
         // 4
         if (horzDelta != 0 || vertDelta != 0) {
             [self trySwapHorizontal:horzDelta vertical:vertDelta];
+            
+            [self hideSelectionIndicator];
             
             // 5
             self.swipeFromColumn = NSNotFound;
@@ -163,7 +192,50 @@ static const CGFloat TileHeight = 36.0;
     SKAction *moveB = [SKAction moveTo:swap.cookieA.sprite.position duration:Duration];
     moveB.timingMode = SKActionTimingEaseOut;
     [swap.cookieB.sprite runAction:moveB];
+    [self runAction:self.swapSound];
+
 }
+
+- (void)animateInvalidSwap:(Swap *)swap completion:(dispatch_block_t)completion {
+    swap.cookieA.sprite.zPosition = 100;
+    swap.cookieB.sprite.zPosition = 90;
+    
+    const NSTimeInterval Duration = 0.2;
+    
+    SKAction *moveA = [SKAction moveTo:swap.cookieB.sprite.position duration:Duration];
+    moveA.timingMode = SKActionTimingEaseOut;
+    
+    SKAction *moveB = [SKAction moveTo:swap.cookieA.sprite.position duration:Duration];
+    moveB.timingMode = SKActionTimingEaseOut;
+    
+    [swap.cookieA.sprite runAction:[SKAction sequence:@[moveA, moveB, [SKAction runBlock:completion]]]];
+    [swap.cookieB.sprite runAction:[SKAction sequence:@[moveB, moveA]]];
+    [self runAction:self.invalidSwapSound];
+
+}
+
+- (void)showSelectionIndicatorForCookie:(Cookie *)cookie {
+    // If the selection indicator is still visible, then first remove it.
+    if (self.selectionSprite.parent != nil) {
+        [self.selectionSprite removeFromParent];
+    }
+    
+    SKTexture *texture = [SKTexture textureWithImageNamed:[cookie highlightedSpriteName]];
+    self.selectionSprite.size = texture.size;
+    [self.selectionSprite runAction:[SKAction setTexture:texture]];
+    
+    [cookie.sprite addChild:self.selectionSprite];
+    self.selectionSprite.alpha = 1.0;
+}
+
+- (void)hideSelectionIndicator {
+    [self.selectionSprite runAction:[SKAction sequence:@[
+            [SKAction fadeOutWithDuration:0.3],
+            [SKAction removeFromParent]]]];
+}
+
+
+
 
 
 // For completeness’s sake, you should also implement touchesEnded, which is called
@@ -171,6 +243,10 @@ static const CGFloat TileHeight = 36.0;
 // decides that it must interrupt the touch (for example, because of an incoming phone call).
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (self.selectionSprite.parent != nil && self.swipeFromColumn != NSNotFound) {
+        [self hideSelectionIndicator];
+    }
+    
     self.swipeFromColumn = self.swipeFromRow = NSNotFound;
 }
 
