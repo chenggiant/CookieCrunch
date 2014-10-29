@@ -31,6 +31,7 @@
 		427E249119FF7FFE00DBE61E /* CCGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E248C19FF7FFE00DBE61E /* CCGScene.m */; };
 		427E249419FF804900DBE61E /* CCGTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249319FF804900DBE61E /* CCGTile.m */; };
 		427E249719FF812700DBE61E /* CCGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249619FF812700DBE61E /* CCGAppDelegate.m */; };
+		427E249A19FF8B6600DBE61E /* CCGChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 427E249919FF8B6600DBE61E /* CCGChain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		427E249319FF804900DBE61E /* CCGTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGTile.m; sourceTree = "<group>"; };
 		427E249519FF812700DBE61E /* CCGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGAppDelegate.h; sourceTree = "<group>"; };
 		427E249619FF812700DBE61E /* CCGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGAppDelegate.m; sourceTree = "<group>"; };
+		427E249819FF8B6600DBE61E /* CCGChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGChain.h; sourceTree = "<group>"; };
+		427E249919FF8B6600DBE61E /* CCGChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGChain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				427E248719FF7FFE00DBE61E /* CCGLevel.m */,
 				427E248819FF7FFE00DBE61E /* CCGSwap.h */,
 				427E248919FF7FFE00DBE61E /* CCGSwap.m */,
+				427E249819FF8B6600DBE61E /* CCGChain.h */,
+				427E249919FF8B6600DBE61E /* CCGChain.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				427E249019FF7FFE00DBE61E /* CCGSwap.m in Sources */,
+				427E249A19FF8B6600DBE61E /* CCGChain.m in Sources */,
 				427E248F19FF7FFE00DBE61E /* CCGLevel.m in Sources */,
 				427E249119FF7FFE00DBE61E /* CCGScene.m in Sources */,
 				427E248E19FF7FFE00DBE61E /* CCGCookie.m in Sources */,
@@ -462,6 +468,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CookieCrunch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -472,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CookieCrunch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

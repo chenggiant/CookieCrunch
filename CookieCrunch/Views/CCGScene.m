@@ -46,6 +46,9 @@ static const CGFloat TileHeight = 36.0;
         [self addChild:background];
         
         self.gameLayer = [SKNode node];
+        
+        self.gameLayer.hidden = YES;
+
         [self addChild:self.gameLayer];
         
         CGPoint layerPosition = CGPointMake(-TileWidth*NumColumns/2, -TileHeight*NumRows/2);
@@ -59,6 +62,8 @@ static const CGFloat TileHeight = 36.0;
         [self.gameLayer addChild:self.cookiesLayer];
     }
     
+    [SKLabelNode labelNodeWithFontNamed:@"GillSans-BoldItalic"];
+
     [self preloadResources];
 
     self.swipeFromColumn = self.swipeFromRow = NSNotFound;
@@ -214,6 +219,145 @@ static const CGFloat TileHeight = 36.0;
 
 }
 
+- (void)animateMatchedCookies:(NSSet *)chains completion:(dispatch_block_t)completion {
+    for (CCGChain *chain in chains) {
+        // Add this line:
+        [self animateScoreForChain:chain];
+        for (CCGCookie *cookie in chain.cookies) {
+            if (cookie.sprite != nil) {
+                SKAction *scaleAction = [SKAction scaleTo:0.1 duration:0.3];
+                scaleAction.timingMode = SKActionTimingEaseOut;
+                [cookie.sprite runAction:[SKAction sequence:@[scaleAction, [SKAction removeFromParent]]]];
+                
+                cookie.sprite = nil;
+            }
+        }
+    }
+    [self runAction:self.matchSound];
+    
+    [self runAction:[SKAction sequence:@[[SKAction waitForDuration:0.3], [SKAction runBlock:completion]]]];
+}
+
+
+- (void)animateFallingCookies:(NSArray *)columns completion:(dispatch_block_t)completion {
+    // 1
+    __block NSTimeInterval longestDuration = 0;
+    
+    for (NSArray *array in columns) {
+        [array enumerateObjectsUsingBlock:^(CCGCookie *cookie, NSUInteger idx, BOOL *stop) {
+            CGPoint newPosition = [self pointForColumn:cookie.column row:cookie.row];
+            
+            // 2
+            NSTimeInterval delay = 0.05 + 0.15*idx;
+            
+            // 3
+            NSTimeInterval duration = ((cookie.sprite.position.y - newPosition.y) / TileHeight) * 0.1;
+            
+            // 4
+            longestDuration = MAX(longestDuration, duration + delay);
+            
+            // 5
+            SKAction *moveAction = [SKAction moveTo:newPosition duration:duration];
+            moveAction.timingMode = SKActionTimingEaseOut;
+            [cookie.sprite runAction:[SKAction sequence:@[
+                [SKAction waitForDuration:delay],
+                [SKAction group:@[moveAction, self.fallingCookieSound]]]]];
+        }];
+    }
+    
+    // 6
+    [self runAction:[SKAction sequence:@[
+        [SKAction waitForDuration:longestDuration],
+        [SKAction runBlock:completion]
+    ]]];
+}
+
+- (void)animateNewCookies:(NSArray *)columns completion:(dispatch_block_t)completion {
+    // 1
+    __block NSTimeInterval longestDuration = 0;
+    
+    for (NSArray *array in columns) {
+        
+        // 2
+        NSInteger startRow = ((CCGCookie *)[array firstObject]).row + 1;
+        
+        [array enumerateObjectsUsingBlock:^(CCGCookie *cookie, NSUInteger idx, BOOL *stop) {
+            
+            // 3
+            SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:[cookie spriteName]];
+            sprite.position = [self pointForColumn:cookie.column row:startRow];
+            [self.cookiesLayer addChild:sprite];
+            cookie.sprite = sprite;
+            
+            // 4
+            NSTimeInterval delay = 0.1 + 0.2*([array count] - idx - 1);
+            
+            // 5
+            NSTimeInterval duration = (startRow - cookie.row) * 0.1;
+            longestDuration = MAX(longestDuration, duration + delay);
+            
+            // 6
+            CGPoint newPosition = [self pointForColumn:cookie.column row:cookie.row];
+            SKAction *moveAction = [SKAction moveTo:newPosition duration:duration];
+            moveAction.timingMode = SKActionTimingEaseOut;
+            cookie.sprite.alpha = 0;
+            [cookie.sprite runAction:[SKAction sequence:@[
+                                                          [SKAction waitForDuration:delay],
+                                                          [SKAction group:@[
+                                                                            [SKAction fadeInWithDuration:0.05], moveAction, self.addCookieSound]]]]];
+        }];
+    }
+    
+    // 7
+    [self runAction:[SKAction sequence:@[
+                                         [SKAction waitForDuration:longestDuration],
+                                         [SKAction runBlock:completion]
+                                         ]]];
+}
+
+
+- (void)animateScoreForChain:(CCGChain *)chain {
+    // Figure out what the midpoint of the chain is.
+    CCGCookie *firstCookie = [chain.cookies firstObject];
+    CCGCookie *lastCookie = [chain.cookies lastObject];
+    CGPoint centerPosition = CGPointMake(
+                                         (firstCookie.sprite.position.x + lastCookie.sprite.position.x)/2,
+                                         (firstCookie.sprite.position.y + lastCookie.sprite.position.y)/2 - 8);
+    
+    // Add a label for the score that slowly floats up.
+    SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"GillSans-BoldItalic"];
+    scoreLabel.fontSize = 16;
+    scoreLabel.text = [NSString stringWithFormat:@"%lu", (long)chain.score];
+    scoreLabel.position = centerPosition;
+    scoreLabel.zPosition = 300;
+    [self.cookiesLayer addChild:scoreLabel];
+    
+    SKAction *moveAction = [SKAction moveBy:CGVectorMake(0, 3) duration:0.7];
+    moveAction.timingMode = SKActionTimingEaseOut;
+    [scoreLabel runAction:[SKAction sequence:@[
+                                               moveAction,
+                                               [SKAction removeFromParent]
+                                               ]]];
+}
+
+
+
+- (void)animateGameOver {
+    SKAction *action = [SKAction moveBy:CGVectorMake(0, -self.size.height) duration:0.3];
+    action.timingMode = SKActionTimingEaseIn;
+    [self.gameLayer runAction:action];
+}
+
+- (void)animateBeginGame {
+    self.gameLayer.hidden = NO;
+    
+    self.gameLayer.position = CGPointMake(0, self.size.height);
+    SKAction *action = [SKAction moveBy:CGVectorMake(0, -self.size.height) duration:0.3];
+    action.timingMode = SKActionTimingEaseOut;
+    [self.gameLayer runAction:action];
+}
+
+
 - (void)showSelectionIndicatorForCookie:(CCGCookie *)cookie {
     // If the selection indicator is still visible, then first remove it.
     if (self.selectionSprite.parent != nil) {
@@ -280,5 +424,8 @@ static const CGFloat TileHeight = 36.0;
     return CGPointMake(column*TileWidth + TileWidth/2, row*TileHeight + TileHeight/2);
 }
 
+- (void)removeAllCookieSprites {
+    [self.cookiesLayer removeAllChildren];
+}
 
 @end
